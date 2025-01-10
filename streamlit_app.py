@@ -35,7 +35,7 @@ col1, col2 = st.columns(2)
 # Chart 1: Traffic over time
 with col1:
     st.subheader("Website Traffic Over Time")
-    fig1, ax1 = plt.subplots()
+    fig1, ax1 = plt.subplots(figsize=(6, 4))
     ax1.plot(traffic_data["Date"], traffic_data["Traffic"], marker="o", label="Traffic")
     ax1.set_title("Website Traffic Over Time")
     ax1.set_xlabel("Date")
@@ -47,7 +47,7 @@ with col1:
 # Chart 2: Bounce rate over time
 with col2:
     st.subheader("Bounce Rate Over Time")
-    fig2, ax2 = plt.subplots()
+    fig2, ax2 = plt.subplots(figsize=(6, 4))
     ax2.bar(traffic_data["Date"], traffic_data["Bounce Rate (%)"], color="orange")
     ax2.set_title("Bounce Rate Over Time")
     ax2.set_xlabel("Date")
@@ -57,7 +57,7 @@ with col2:
 # Chart 3: Average visit duration over time
 with col1:
     st.subheader("Average Visit Duration Over Time")
-    fig3, ax3 = plt.subplots()
+    fig3, ax3 = plt.subplots(figsize=(6, 4))
     ax3.plot(traffic_data["Date"], traffic_data["Avg Visit Duration (s)"], marker="s", color="green", label="Avg Visit Duration")
     ax3.set_title("Average Visit Duration Over Time")
     ax3.set_xlabel("Date")
@@ -69,14 +69,14 @@ with col1:
 # Chart 4: Gender distribution
 with col2:
     st.subheader("Gender Distribution")
-    fig4, ax4 = plt.subplots()
+    fig4, ax4 = plt.subplots(figsize=(6, 4))
     ax4.pie(demographics_data["Percentage"], labels=demographics_data["Gender"], autopct="%1.1f%%", startangle=140)
     ax4.set_title("Gender Distribution")
     st.pyplot(fig4)
 
 # Age group distribution (below the grid)
 st.subheader("Age Group Distribution")
-fig5, ax5 = plt.subplots()
+fig5, ax5 = plt.subplots(figsize=(6, 4))
 sns.barplot(x="Age Group", y="Percentage", data=age_groups_data, ax=ax5, palette="muted")
 ax5.set_title("Age Group Distribution")
 ax5.set_xlabel("Age Group")
