@@ -75,10 +75,12 @@ with col2:
     st.pyplot(fig4)
 
 # Age group distribution (below the grid)
-st.subheader("Age Group Distribution")
-fig5, ax5 = plt.subplots(figsize=(6, 4))
-sns.barplot(x="Age Group", y="Percentage", data=age_groups_data, ax=ax5, palette="muted")
-ax5.set_title("Age Group Distribution")
-ax5.set_xlabel("Age Group")
-ax5.set_ylabel("Percentage")
-st.pyplot(fig5)
+# Chart 5: Age group distribution
+with col1:
+    st.subheader("Age Group Distribution")
+    fig5, ax5 = plt.subplots(figsize=(6, 4))
+    sns.barplot(x="Age Group", y="Percentage", data=age_groups_data, ax=ax5, palette="muted")
+    ax5.set_title("Age Group Distribution")
+    ax5.set_xlabel("Age Group")
+    ax5.set_ylabel("Percentage")
+    st.pyplot(fig5)
